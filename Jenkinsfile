@@ -23,5 +23,9 @@ pipeline {
                     archiveArtifacts 'target/*.jar'
             }
         }
+        stage("email"){
+            emailext body: 'hii your jenkins pipeline is faild', subject: 'regarding test fail or piprline fail', to: 'te415606@gmail.com'
+            
+        }
     }
 }
