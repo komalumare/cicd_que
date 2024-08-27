@@ -24,7 +24,7 @@ pipeline {
         }
         stage("enviroment"){
             steps{
-                envVarsForTool()
+                echo "enviroment"
             }
         }
     }
