@@ -17,14 +17,10 @@ pipeline {
                 bat "java hello"
             }
         }
-        stage("tomcat"){
+        stage("unit testing"){
             steps{
-                echo "hii from tomcat"
-            }
-        }
-        stage("enviroment"){
-            steps{
-                echo "enviroment"
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
             }
         }
     }
